@@ -20,8 +20,8 @@ public class BbsSignaturesModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void sampleMethod(String stringArgument, int numberArgument, Callback callback) {
-        // TODO: Implement some actually useful functionality
-        callback.invoke("Received numberArgument: " + numberArgument + " stringArgument: " + stringArgument);
+    public void sampleMethod(Callback callback) {
+        callback.invoke("TEST: " + BbsLibrary.INSTANCE.bls_secret_key_size());
+        // callback.invoke("BBS Signature Size: " + this.libbbs.bbs_signature_size());
     }
 }
